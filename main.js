@@ -7,7 +7,7 @@ cnv.width = 800;
 cnv.height = 600;
 
 // Global Variables
-let myArray = [200, 500, 350, 400, 580, 170, 225, 325, 100, 550, 250, 300, 600, 50, 275];
+let myArray = [300,300,300,300,300,300,300,300,300,300,300,300,300,300,300];
 
 
 // Main Program Loop
@@ -31,4 +31,24 @@ function draw() {
 
     // Request another Animation Frame
     requestAnimationFrame(draw);
+}
+
+
+document.addEventListener("keydown", keycode);
+
+function keycode(event)
+{
+    console.log(event.code);
+    for (let i = 0; i < myArray.length; i++)
+    {
+        if (event.code == "Space")
+        {
+            myArray[i] += Math.random()*(5-(-5)) + -5;
+        }
+        if (event.code == "KeyR")
+        {
+            myArray[i] = 300;
+        }
+        
+    }
 }
